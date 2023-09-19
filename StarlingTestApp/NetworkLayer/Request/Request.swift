@@ -1,5 +1,5 @@
 //
-//  NetworkLayer.swift
+//  Request.swift
 //  StarlingTestApp
 //
 //  Created by Vadim Chistiakov on 19.09.2023.
@@ -18,7 +18,7 @@ struct Request {
     init(
         urlComponents: URLComponents,
         headers: Header? = nil,
-        reqBody: Body? = nil,
+        reqBody: Encodable?,
         reqTimeout: Float? = nil,
         httpMethod: RequestMethod
 

@@ -17,13 +17,11 @@ final class MainCoordinator: Coordinator {
 
     func run(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
-        let viewController = FeedItemsViewController()
-        let feedService = FeedServiceImpl()
         let feedPresenter = FeedPresenter(
-            feedService: feedService,
-            view: viewController
+            feedService: FeedServiceImpl(),
+            savingsGoalsService: SavingsGoalsServiceImpl()
         )
-        viewController.set(feedPresenter)
+        let viewController = FeedItemsViewController(presenter: feedPresenter)
         navigationController.pushViewController(viewController, animated: false)
     }
 

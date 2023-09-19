@@ -11,13 +11,13 @@ struct FeedItems: Decodable {
     let feedItems: [FeedItem]
 }
 
-struct FeedItem: Decodable {
-    struct Amount: Decodable {
+struct FeedItem: Hashable, Decodable {
+    struct Amount: Hashable, Codable {
         let currency: String
         let minorUnits: Int
     }
     
-    enum Direction: String, Decodable {
+    enum Direction: String, Hashable, Decodable {
         case OUT
         case `IN`
     }
@@ -26,4 +26,5 @@ struct FeedItem: Decodable {
     let amount: Amount
     let direction: Direction
     let spendingCategory: String
+    let feedItemUid: String
 }

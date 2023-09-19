@@ -9,27 +9,49 @@ import Foundation
 
 final class FeedPresenter {
     
+    var dataSource: DataSource?
+    var isRefreshing: Bool = false
+
     private let feedService: FeedService
-    private var feedItems = [FeedItem]()
-    
-    private weak var view: PresenterView?
-    
+    private let savingsGoalsService: SavingsGoalsService
+    private var snapshot: DataSourceSnapshot
+        
     init(
         feedService: FeedService,
-        view: PresenterView
+        savingsGoalsService: SavingsGoalsService,
+        snapshot: DataSourceSnapshot = DataSourceSnapshot()
     ) {
         self.feedService = feedService
-        self.view = view
+        self.savingsGoalsService = savingsGoalsService
+        self.snapshot = snapshot
     }
     
-    func fetchFeedItems() {
+    func fetchFeedItems(animatingDifferences: Bool) {
         Task {
             do {
-                feedItems = try await feedService.fetchAllFeedItems()
-                view?.didFinishFetching()
+                isRefreshing = true
+                let feedItems = try await feedService.fetchAllFeedItems()
+                configureDataSource(feedItems: feedItems, animatingDifferences: animatingDifferences)
             } catch {
                 print("custom error \((error as? RequestError).debugDescription)")
             }
         }
+    }
+    
+    func transferToSavings() {
+        Task {
+            try await savingsGoalsService.addMoneyToSavingsGoals(count: 100)
+        }
+    }
+    
+    //MARK: - Private methods
+    
+    private func configureDataSource(feedItems: [FeedItem], animatingDifferences: Bool) {
+        snapshot.deleteAllItems()
+        snapshot.appendSections(Section.allCases)
+        
+        snapshot.appendItems(feedItems, toSection: .feed)
+        dataSource?.apply(snapshot, animatingDifferences: animatingDifferences)
+        isRefreshing = false
     }
 }

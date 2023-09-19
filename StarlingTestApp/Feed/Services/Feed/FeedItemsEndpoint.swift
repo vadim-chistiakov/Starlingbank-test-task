@@ -12,7 +12,7 @@ enum FeedItemsEndpoint {
 }
 
 extension FeedItemsEndpoint: GetEndpoint {
-    
+        
     var path: String {
         switch self {
         case .feedItems(let accountId, let categoryId, _):
@@ -28,5 +28,5 @@ extension FeedItemsEndpoint: GetEndpoint {
             ]
         }
     }
-
+    
 }

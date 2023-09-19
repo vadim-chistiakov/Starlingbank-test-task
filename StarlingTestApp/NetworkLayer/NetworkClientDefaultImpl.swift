@@ -10,7 +10,7 @@ import Foundation
 final class NetworkClientDefaultImpl: NetworkClient {
     
     func sendRequest<T: Decodable>(
-        endpoint: Endpoint,
+        endpoint: any Endpoint,
         responseModelType: T.Type
     ) async throws -> T {
         

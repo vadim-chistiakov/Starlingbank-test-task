@@ -10,7 +10,7 @@ import Foundation
 protocol NetworkClient {
     
     func sendRequest<T: Decodable>(
-        endpoint: Endpoint,
+        endpoint: any Endpoint,
         responseModelType: T.Type
     ) async throws -> T
     
@@ -19,7 +19,7 @@ protocol NetworkClient {
 extension NetworkClient {
     
     func sendRequest<T: Decodable>(
-        endpoint: Endpoint,
+        endpoint: any Endpoint,
         responseModelType: T.Type
     ) async throws -> T {
         try await NetworkClientDefaultImpl().sendRequest(
