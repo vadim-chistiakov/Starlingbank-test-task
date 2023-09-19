@@ -12,7 +12,7 @@ final class NetworkClientDefaultImpl: NetworkClient {
     func sendRequest<T: Decodable>(
         endpoint: Endpoint,
         responseModelType: T.Type
-    ) async -> Result<T, RequestError> {
+    ) async throws -> T {
         
         var urlComponents = URLComponents()
         urlComponents.scheme = endpoint.scheme.rawValue
@@ -28,11 +28,12 @@ final class NetworkClientDefaultImpl: NetworkClient {
         )
         
         guard let urlRequest = request.buildURLRequest() else {
-            return .failure(.urlMalformed)
+            throw RequestError.urlMalformed
         }
         
         print("Url request: \(urlRequest.description)")
-        
+        print("Url request headers: \(urlRequest.allHTTPHeaderFields ?? [:])")
+
         do {
             let (data, response) = try await URLSession.shared.data(for: urlRequest)
             
@@ -63,14 +64,14 @@ final class NetworkClientDefaultImpl: NetworkClient {
                     responseModelType,
                     from: data
                 ) else {
-                    return .failure(.decodingError(""))
+                    throw RequestError.decodingError("")
                 }
-                return .success(decodedResponse)
+                return decodedResponse
             default:
-                return .failure(.unknown("Unknown status code"))
+                throw RequestError.unknown("Unknown status code")
             }
         } catch {
-            return .failure(handleError(urlRequest, error))
+            throw handleError(urlRequest, error)
         }
     }
     

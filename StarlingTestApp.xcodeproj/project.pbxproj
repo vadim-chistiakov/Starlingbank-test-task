@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		AE9957902AB9B05600CE52AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE99578F2AB9B05600CE52AE /* AppDelegate.swift */; };
 		AE9957922AB9B05600CE52AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957912AB9B05600CE52AE /* SceneDelegate.swift */; };
-		AE9957942AB9B05600CE52AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957932AB9B05600CE52AE /* ViewController.swift */; };
-		AE9957972AB9B05600CE52AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9957952AB9B05600CE52AE /* Main.storyboard */; };
 		AE9957992AB9B05700CE52AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE9957982AB9B05700CE52AE /* Assets.xcassets */; };
 		AE99579C2AB9B05700CE52AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE99579A2AB9B05700CE52AE /* LaunchScreen.storyboard */; };
 		AE9957A52AB9B2A900CE52AE /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957A42AB9B2A900CE52AE /* NetworkLayer.swift */; };
@@ -22,15 +20,18 @@
 		AE9957B52AB9B34500CE52AE /* PostEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957AE2AB9B34500CE52AE /* PostEndpoint.swift */; };
 		AE9957B62AB9B34500CE52AE /* GetEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957AF2AB9B34500CE52AE /* GetEndpoint.swift */; };
 		AE9957B72AB9B34500CE52AE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957B02AB9B34500CE52AE /* Endpoint.swift */; };
-		AE9957BA2AB9B5D700CE52AE /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957B92AB9B5D600CE52AE /* TransactionsViewController.swift */; };
+		AE9957BA2AB9B5D700CE52AE /* FeedItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957B92AB9B5D600CE52AE /* FeedItemsViewController.swift */; };
+		AE9957BD2AB9B9A000CE52AE /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957BC2AB9B9A000CE52AE /* FeedService.swift */; };
+		AE9957BF2AB9B9B300CE52AE /* FeedItemsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957BE2AB9B9B300CE52AE /* FeedItemsEndpoint.swift */; };
+		AE9957C22AB9BD7700CE52AE /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957C12AB9BD7700CE52AE /* FeedItem.swift */; };
+		AE9957C42AB9CB2E00CE52AE /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957C32AB9CB2E00CE52AE /* FeedPresenter.swift */; };
+		AE9957C62AB9D74B00CE52AE /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957C52AB9D74B00CE52AE /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AE99578C2AB9B05600CE52AE /* StarlingTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarlingTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE99578F2AB9B05600CE52AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE9957912AB9B05600CE52AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AE9957932AB9B05600CE52AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AE9957962AB9B05600CE52AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE9957982AB9B05700CE52AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE99579B2AB9B05700CE52AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE99579D2AB9B05700CE52AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,7 +44,12 @@
 		AE9957AE2AB9B34500CE52AE /* PostEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEndpoint.swift; sourceTree = "<group>"; };
 		AE9957AF2AB9B34500CE52AE /* GetEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetEndpoint.swift; sourceTree = "<group>"; };
 		AE9957B02AB9B34500CE52AE /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		AE9957B92AB9B5D600CE52AE /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		AE9957B92AB9B5D600CE52AE /* FeedItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsViewController.swift; sourceTree = "<group>"; };
+		AE9957BC2AB9B9A000CE52AE /* FeedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
+		AE9957BE2AB9B9B300CE52AE /* FeedItemsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsEndpoint.swift; sourceTree = "<group>"; };
+		AE9957C12AB9BD7700CE52AE /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		AE9957C32AB9CB2E00CE52AE /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
+		AE9957C52AB9D74B00CE52AE /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,15 +82,14 @@
 		AE99578E2AB9B05600CE52AE /* StarlingTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				AE9957B82AB9B5AC00CE52AE /* Transactions */,
+				AE9957B82AB9B5AC00CE52AE /* Feed */,
 				AE9957A32AB9B1A800CE52AE /* NetworkLayer */,
 				AE99578F2AB9B05600CE52AE /* AppDelegate.swift */,
 				AE9957912AB9B05600CE52AE /* SceneDelegate.swift */,
-				AE9957932AB9B05600CE52AE /* ViewController.swift */,
-				AE9957952AB9B05600CE52AE /* Main.storyboard */,
 				AE9957982AB9B05700CE52AE /* Assets.xcassets */,
 				AE99579A2AB9B05700CE52AE /* LaunchScreen.storyboard */,
 				AE99579D2AB9B05700CE52AE /* Info.plist */,
+				AE9957C52AB9D74B00CE52AE /* MainCoordinator.swift */,
 			);
 			path = StarlingTestApp;
 			sourceTree = "<group>";
@@ -121,12 +126,32 @@
 			path = Endpoint;
 			sourceTree = "<group>";
 		};
-		AE9957B82AB9B5AC00CE52AE /* Transactions */ = {
+		AE9957B82AB9B5AC00CE52AE /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				AE9957B92AB9B5D600CE52AE /* TransactionsViewController.swift */,
+				AE9957C02AB9BD6B00CE52AE /* Models */,
+				AE9957BB2AB9B98500CE52AE /* Services */,
+				AE9957B92AB9B5D600CE52AE /* FeedItemsViewController.swift */,
+				AE9957C32AB9CB2E00CE52AE /* FeedPresenter.swift */,
 			);
-			path = Transactions;
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		AE9957BB2AB9B98500CE52AE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AE9957BC2AB9B9A000CE52AE /* FeedService.swift */,
+				AE9957BE2AB9B9B300CE52AE /* FeedItemsEndpoint.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AE9957C02AB9BD6B00CE52AE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AE9957C12AB9BD7700CE52AE /* FeedItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,7 +214,6 @@
 			files = (
 				AE99579C2AB9B05700CE52AE /* LaunchScreen.storyboard in Resources */,
 				AE9957992AB9B05700CE52AE /* Assets.xcassets in Resources */,
-				AE9957972AB9B05600CE52AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,18 +224,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE9957C62AB9D74B00CE52AE /* MainCoordinator.swift in Sources */,
 				AE9957B12AB9B34500CE52AE /* Scheme.swift in Sources */,
 				AE9957B32AB9B34500CE52AE /* Request.swift in Sources */,
+				AE9957C22AB9BD7700CE52AE /* FeedItem.swift in Sources */,
 				AE9957A52AB9B2A900CE52AE /* NetworkLayer.swift in Sources */,
 				AE9957B62AB9B34500CE52AE /* GetEndpoint.swift in Sources */,
+				AE9957BF2AB9B9B300CE52AE /* FeedItemsEndpoint.swift in Sources */,
 				AE9957A72AB9B2E900CE52AE /* NetworkClientDefaultImpl.swift in Sources */,
-				AE9957942AB9B05600CE52AE /* ViewController.swift in Sources */,
 				AE9957B22AB9B34500CE52AE /* RequestMethod.swift in Sources */,
 				AE9957902AB9B05600CE52AE /* AppDelegate.swift in Sources */,
 				AE9957922AB9B05600CE52AE /* SceneDelegate.swift in Sources */,
 				AE9957B52AB9B34500CE52AE /* PostEndpoint.swift in Sources */,
+				AE9957C42AB9CB2E00CE52AE /* FeedPresenter.swift in Sources */,
 				AE9957B72AB9B34500CE52AE /* Endpoint.swift in Sources */,
-				AE9957BA2AB9B5D700CE52AE /* TransactionsViewController.swift in Sources */,
+				AE9957BA2AB9B5D700CE52AE /* FeedItemsViewController.swift in Sources */,
+				AE9957BD2AB9B9A000CE52AE /* FeedService.swift in Sources */,
 				AE9957B42AB9B34500CE52AE /* RequestError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,14 +247,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AE9957952AB9B05600CE52AE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AE9957962AB9B05600CE52AE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AE99579A2AB9B05700CE52AE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -364,7 +384,6 @@
 				INFOPLIST_FILE = StarlingTestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -392,7 +411,6 @@
 				INFOPLIST_FILE = StarlingTestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

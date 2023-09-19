@@ -8,8 +8,24 @@
 import Foundation
 
 protocol NetworkClient {
+    
     func sendRequest<T: Decodable>(
         endpoint: Endpoint,
         responseModelType: T.Type
-    ) async -> Result<T, RequestError>
+    ) async throws -> T
+    
+}
+
+extension NetworkClient {
+    
+    func sendRequest<T: Decodable>(
+        endpoint: Endpoint,
+        responseModelType: T.Type
+    ) async throws -> T {
+        try await NetworkClientDefaultImpl().sendRequest(
+            endpoint: endpoint,
+            responseModelType: responseModelType
+        )
+    }
+    
 }
