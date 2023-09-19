@@ -10,6 +10,8 @@ import Foundation
 final class FeedPresenter {
     
     private let feedService: FeedService
+    private var feedItems = [FeedItem]()
+    
     private weak var view: PresenterView?
     
     init(
@@ -22,9 +24,12 @@ final class FeedPresenter {
     
     func fetchFeedItems() {
         Task {
-            let feedItems = try await feedService.fetchAllFeedItems()
-            view?.didFinishFetching()
-            print(feedItems)
+            do {
+                feedItems = try await feedService.fetchAllFeedItems()
+                view?.didFinishFetching()
+            } catch {
+                print("custom error \((error as? RequestError).debugDescription)")
+            }
         }
     }
 }

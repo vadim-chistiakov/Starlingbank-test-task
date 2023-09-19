@@ -58,15 +58,17 @@ final class NetworkClientDefaultImpl: NetworkClient {
             switch httpResponse.statusCode {
             case 200...299:
                 let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                decoder.dataDecodingStrategy = .base64
                 
-                guard let decodedResponse = try? decoder.decode(
-                    responseModelType,
-                    from: data
-                ) else {
-                    throw RequestError.decodingError("")
+                do {
+                    let decodedResponse = try decoder.decode(
+                        responseModelType,
+                        from: data
+                    )
+                    return decodedResponse
+                } catch {
+                    throw RequestError.decodingError(String(describing: error))
                 }
-                return decodedResponse
             default:
                 throw RequestError.unknown("Unknown status code")
             }

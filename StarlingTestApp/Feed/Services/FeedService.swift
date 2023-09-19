@@ -18,10 +18,10 @@ final class FeedServiceImpl: NetworkClient, FeedService {
             endpoint: FeedItemsEndpoint.feedItems(
                 accountId: "12fc273b-4d4d-4d00-a3d0-c5062488a2f6",
                 categoryId: "12fcca98-4d0a-438c-bd1c-7ccc521c7914",
-                changesSince: Date.now
+                changesSince: Date.distantPast
             ),
-            responseModelType: [FeedItem].self
-        )
+            responseModelType: FeedItems.self
+        ).feedItems
     }
     
 }

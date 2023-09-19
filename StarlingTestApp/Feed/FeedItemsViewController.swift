@@ -32,6 +32,6 @@ extension FeedItemsViewController: PresenterView {
     
     @MainActor
     func didFinishFetching() {
-        
+
     }
 }

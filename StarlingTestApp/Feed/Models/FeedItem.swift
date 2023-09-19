@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct FeedItems: Decodable {
+    let feedItems: [FeedItem]
+}
+
 struct FeedItem: Decodable {
     struct Amount: Decodable {
         let currency: String
