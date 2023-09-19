@@ -13,6 +13,16 @@
 		AE9957972AB9B05600CE52AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9957952AB9B05600CE52AE /* Main.storyboard */; };
 		AE9957992AB9B05700CE52AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE9957982AB9B05700CE52AE /* Assets.xcassets */; };
 		AE99579C2AB9B05700CE52AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE99579A2AB9B05700CE52AE /* LaunchScreen.storyboard */; };
+		AE9957A52AB9B2A900CE52AE /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957A42AB9B2A900CE52AE /* NetworkLayer.swift */; };
+		AE9957A72AB9B2E900CE52AE /* NetworkClientDefaultImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957A62AB9B2E900CE52AE /* NetworkClientDefaultImpl.swift */; };
+		AE9957B12AB9B34500CE52AE /* Scheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957A92AB9B34500CE52AE /* Scheme.swift */; };
+		AE9957B22AB9B34500CE52AE /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957AA2AB9B34500CE52AE /* RequestMethod.swift */; };
+		AE9957B32AB9B34500CE52AE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957AB2AB9B34500CE52AE /* Request.swift */; };
+		AE9957B42AB9B34500CE52AE /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957AC2AB9B34500CE52AE /* RequestError.swift */; };
+		AE9957B52AB9B34500CE52AE /* PostEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957AE2AB9B34500CE52AE /* PostEndpoint.swift */; };
+		AE9957B62AB9B34500CE52AE /* GetEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957AF2AB9B34500CE52AE /* GetEndpoint.swift */; };
+		AE9957B72AB9B34500CE52AE /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957B02AB9B34500CE52AE /* Endpoint.swift */; };
+		AE9957BA2AB9B5D700CE52AE /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957B92AB9B5D600CE52AE /* TransactionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,16 @@
 		AE9957982AB9B05700CE52AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE99579B2AB9B05700CE52AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE99579D2AB9B05700CE52AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE9957A42AB9B2A900CE52AE /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		AE9957A62AB9B2E900CE52AE /* NetworkClientDefaultImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientDefaultImpl.swift; sourceTree = "<group>"; };
+		AE9957A92AB9B34500CE52AE /* Scheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheme.swift; sourceTree = "<group>"; };
+		AE9957AA2AB9B34500CE52AE /* RequestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		AE9957AB2AB9B34500CE52AE /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		AE9957AC2AB9B34500CE52AE /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		AE9957AE2AB9B34500CE52AE /* PostEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostEndpoint.swift; sourceTree = "<group>"; };
+		AE9957AF2AB9B34500CE52AE /* GetEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetEndpoint.swift; sourceTree = "<group>"; };
+		AE9957B02AB9B34500CE52AE /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		AE9957B92AB9B5D600CE52AE /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,8 @@
 		AE99578E2AB9B05600CE52AE /* StarlingTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				AE9957B82AB9B5AC00CE52AE /* Transactions */,
+				AE9957A32AB9B1A800CE52AE /* NetworkLayer */,
 				AE99578F2AB9B05600CE52AE /* AppDelegate.swift */,
 				AE9957912AB9B05600CE52AE /* SceneDelegate.swift */,
 				AE9957932AB9B05600CE52AE /* ViewController.swift */,
@@ -65,6 +87,46 @@
 				AE99579D2AB9B05700CE52AE /* Info.plist */,
 			);
 			path = StarlingTestApp;
+			sourceTree = "<group>";
+		};
+		AE9957A32AB9B1A800CE52AE /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				AE9957AD2AB9B34500CE52AE /* Endpoint */,
+				AE9957A82AB9B34500CE52AE /* Request */,
+				AE9957A42AB9B2A900CE52AE /* NetworkLayer.swift */,
+				AE9957A62AB9B2E900CE52AE /* NetworkClientDefaultImpl.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		AE9957A82AB9B34500CE52AE /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				AE9957A92AB9B34500CE52AE /* Scheme.swift */,
+				AE9957AA2AB9B34500CE52AE /* RequestMethod.swift */,
+				AE9957AB2AB9B34500CE52AE /* Request.swift */,
+				AE9957AC2AB9B34500CE52AE /* RequestError.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		AE9957AD2AB9B34500CE52AE /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				AE9957AE2AB9B34500CE52AE /* PostEndpoint.swift */,
+				AE9957AF2AB9B34500CE52AE /* GetEndpoint.swift */,
+				AE9957B02AB9B34500CE52AE /* Endpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		AE9957B82AB9B5AC00CE52AE /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				AE9957B92AB9B5D600CE52AE /* TransactionsViewController.swift */,
+			);
+			path = Transactions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +200,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE9957B12AB9B34500CE52AE /* Scheme.swift in Sources */,
+				AE9957B32AB9B34500CE52AE /* Request.swift in Sources */,
+				AE9957A52AB9B2A900CE52AE /* NetworkLayer.swift in Sources */,
+				AE9957B62AB9B34500CE52AE /* GetEndpoint.swift in Sources */,
+				AE9957A72AB9B2E900CE52AE /* NetworkClientDefaultImpl.swift in Sources */,
 				AE9957942AB9B05600CE52AE /* ViewController.swift in Sources */,
+				AE9957B22AB9B34500CE52AE /* RequestMethod.swift in Sources */,
 				AE9957902AB9B05600CE52AE /* AppDelegate.swift in Sources */,
 				AE9957922AB9B05600CE52AE /* SceneDelegate.swift in Sources */,
+				AE9957B52AB9B34500CE52AE /* PostEndpoint.swift in Sources */,
+				AE9957B72AB9B34500CE52AE /* Endpoint.swift in Sources */,
+				AE9957BA2AB9B5D700CE52AE /* TransactionsViewController.swift in Sources */,
+				AE9957B42AB9B34500CE52AE /* RequestError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
