@@ -1,5 +1,6 @@
-# Starlingbank-test-task
-Starlingbank test task for iOS role by Vadim Chistiakov
+# Starlingbank test task
+
+### Starlingbank test task for iOS role by Vadim Chistiakov
 
 When the data is loaded, the transfer button displays the amount that will be sent to the savings goals. 
 After successfully adding money, a new transaction appears in the feed
