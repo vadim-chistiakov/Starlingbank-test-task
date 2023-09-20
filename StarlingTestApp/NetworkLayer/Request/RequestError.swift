@@ -102,7 +102,3 @@ enum RequestError: Error, CustomDebugStringConvertible, Equatable {
         }
     }
 }
-
-enum NoReply: Codable, Error {
-    case emptyResponse
-}

@@ -7,6 +7,7 @@
 
 import Foundation
 
+//TODO: - This is a compromise for the test task
 struct MockAccountData {
     let accountId = "12fc273b-4d4d-4d00-a3d0-c5062488a2f6"
     let categoryId = "12fcca98-4d0a-438c-bd1c-7ccc521c7914"

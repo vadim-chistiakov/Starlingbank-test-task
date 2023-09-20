@@ -76,6 +76,8 @@ final class FeedItemsViewController: UIViewController {
         
     }
     
+    //MARK: - Private methods
+    
     private func setupUI() {
         view.backgroundColor = .white
         title = "Feed"
@@ -112,11 +114,6 @@ final class FeedItemsViewController: UIViewController {
     @objc
     private func didTapTransfer() {
         presenter.transferToSavings()
-    }
-    
-    @objc
-    private func handleRefresh() {
-        presenter.fetchFeedItems(animatingDifferences: true)
     }
 
 }

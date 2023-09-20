@@ -40,7 +40,7 @@ struct Request {
     }
 }
 
-extension Encodable {
+private extension Encodable {
     func encode() -> Data? {
         do {
             return try JSONEncoder().encode(self)

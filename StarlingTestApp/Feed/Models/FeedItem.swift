@@ -18,6 +18,7 @@ struct FeedItem: Hashable, Decodable {
         let minorUnits: Int64
     }
     
+    //TODO: - Can be useful for future features
     enum Direction: String, Hashable, Decodable {
         case out = "OUT"
         case `in` = "IN"

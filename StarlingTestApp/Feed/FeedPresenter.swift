@@ -17,6 +17,8 @@ final class FeedPresenter {
         currencyFormatter.formatCurrency(minorUnits: moneyToSavingsGoals)
     }
     
+    //MARK: - Private properties
+    
     private var moneyToSavingsGoals: Int64 {
         currencyFormatter.roundedAmount(for: feedItems.map(\.amount))
     }
