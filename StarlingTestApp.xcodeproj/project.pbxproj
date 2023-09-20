@@ -31,6 +31,10 @@
 		AE9957CF2AB9FC2F00CE52AE /* SavingsGoalsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957CE2AB9FC2F00CE52AE /* SavingsGoalsService.swift */; };
 		AE9957D12AB9FC3E00CE52AE /* SavingsGoalsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957D02AB9FC3E00CE52AE /* SavingsGoalsEndpoint.swift */; };
 		AE9957D32AB9FE7D00CE52AE /* AddMoneyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957D22AB9FE7D00CE52AE /* AddMoneyModels.swift */; };
+		AE9957D62ABAE40E00CE52AE /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957D52ABAE40E00CE52AE /* CurrencyFormatter.swift */; };
+		AE9957D92ABAE7C700CE52AE /* FeedItemCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957D82ABAE7C700CE52AE /* FeedItemCellModel.swift */; };
+		AE9957DB2ABAF5B800CE52AE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957DA2ABAF5B800CE52AE /* Constants.swift */; };
+		AE9957DD2ABAF66E00CE52AE /* MockAccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9957DC2ABAF66E00CE52AE /* MockAccountData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		AE9957CE2AB9FC2F00CE52AE /* SavingsGoalsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsGoalsService.swift; sourceTree = "<group>"; };
 		AE9957D02AB9FC3E00CE52AE /* SavingsGoalsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsGoalsEndpoint.swift; sourceTree = "<group>"; };
 		AE9957D22AB9FE7D00CE52AE /* AddMoneyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyModels.swift; sourceTree = "<group>"; };
+		AE9957D52ABAE40E00CE52AE /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
+		AE9957D82ABAE7C700CE52AE /* FeedItemCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemCellModel.swift; sourceTree = "<group>"; };
+		AE9957DA2ABAF5B800CE52AE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AE9957DC2ABAF66E00CE52AE /* MockAccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAccountData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +100,7 @@
 		AE99578E2AB9B05600CE52AE /* StarlingTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				AE9957D42ABAE3FA00CE52AE /* Formatter */,
 				AE9957C92AB9EC9100CE52AE /* Extensions */,
 				AE9957B82AB9B5AC00CE52AE /* Feed */,
 				AE9957A32AB9B1A800CE52AE /* NetworkLayer */,
@@ -101,6 +110,7 @@
 				AE99579A2AB9B05700CE52AE /* LaunchScreen.storyboard */,
 				AE99579D2AB9B05700CE52AE /* Info.plist */,
 				AE9957C52AB9D74B00CE52AE /* MainCoordinator.swift */,
+				AE9957DA2ABAF5B800CE52AE /* Constants.swift */,
 			);
 			path = StarlingTestApp;
 			sourceTree = "<group>";
@@ -140,11 +150,11 @@
 		AE9957B82AB9B5AC00CE52AE /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				AE9957D72ABAE7B200CE52AE /* Cell */,
 				AE9957C02AB9BD6B00CE52AE /* Models */,
 				AE9957BB2AB9B98500CE52AE /* Services */,
 				AE9957B92AB9B5D600CE52AE /* FeedItemsViewController.swift */,
 				AE9957C32AB9CB2E00CE52AE /* FeedPresenter.swift */,
-				AE9957C72AB9EB3F00CE52AE /* FeedItemCollectionViewCell.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -162,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				AE9957C12AB9BD7700CE52AE /* FeedItem.swift */,
+				AE9957DC2ABAF66E00CE52AE /* MockAccountData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +202,23 @@
 				AE9957D02AB9FC3E00CE52AE /* SavingsGoalsEndpoint.swift */,
 			);
 			path = SavingsGoals;
+			sourceTree = "<group>";
+		};
+		AE9957D42ABAE3FA00CE52AE /* Formatter */ = {
+			isa = PBXGroup;
+			children = (
+				AE9957D52ABAE40E00CE52AE /* CurrencyFormatter.swift */,
+			);
+			path = Formatter;
+			sourceTree = "<group>";
+		};
+		AE9957D72ABAE7B200CE52AE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AE9957C72AB9EB3F00CE52AE /* FeedItemCollectionViewCell.swift */,
+				AE9957D82ABAE7C700CE52AE /* FeedItemCellModel.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE9957DB2ABAF5B800CE52AE /* Constants.swift in Sources */,
 				AE9957C62AB9D74B00CE52AE /* MainCoordinator.swift in Sources */,
 				AE9957B12AB9B34500CE52AE /* Scheme.swift in Sources */,
 				AE9957B32AB9B34500CE52AE /* Request.swift in Sources */,
@@ -271,11 +300,13 @@
 				AE9957B62AB9B34500CE52AE /* GetEndpoint.swift in Sources */,
 				AE9957BF2AB9B9B300CE52AE /* FeedItemsEndpoint.swift in Sources */,
 				AE9957A72AB9B2E900CE52AE /* NetworkClientDefaultImpl.swift in Sources */,
+				AE9957DD2ABAF66E00CE52AE /* MockAccountData.swift in Sources */,
 				AE9957C82AB9EB3F00CE52AE /* FeedItemCollectionViewCell.swift in Sources */,
 				AE9957D32AB9FE7D00CE52AE /* AddMoneyModels.swift in Sources */,
 				AE9957B22AB9B34500CE52AE /* RequestMethod.swift in Sources */,
 				AE9957902AB9B05600CE52AE /* AppDelegate.swift in Sources */,
 				AE9957922AB9B05600CE52AE /* SceneDelegate.swift in Sources */,
+				AE9957D62ABAE40E00CE52AE /* CurrencyFormatter.swift in Sources */,
 				AE9957CB2AB9ECA000CE52AE /* UIView+Extension.swift in Sources */,
 				AE9957D12AB9FC3E00CE52AE /* SavingsGoalsEndpoint.swift in Sources */,
 				AE9957B52AB9B34500CE52AE /* PutEndpoint.swift in Sources */,
@@ -284,6 +315,7 @@
 				AE9957B72AB9B34500CE52AE /* Endpoint.swift in Sources */,
 				AE9957BA2AB9B5D700CE52AE /* FeedItemsViewController.swift in Sources */,
 				AE9957BD2AB9B9A000CE52AE /* FeedService.swift in Sources */,
+				AE9957D92ABAE7C700CE52AE /* FeedItemCellModel.swift in Sources */,
 				AE9957B42AB9B34500CE52AE /* RequestError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

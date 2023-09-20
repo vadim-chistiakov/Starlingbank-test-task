@@ -12,14 +12,15 @@ struct FeedItems: Decodable {
 }
 
 struct FeedItem: Hashable, Decodable {
+    
     struct Amount: Hashable, Codable {
         let currency: String
-        let minorUnits: Int
+        let minorUnits: Int64
     }
     
     enum Direction: String, Hashable, Decodable {
-        case OUT
-        case `IN`
+        case out = "OUT"
+        case `in` = "IN"
     }
     
     let counterPartyName: String

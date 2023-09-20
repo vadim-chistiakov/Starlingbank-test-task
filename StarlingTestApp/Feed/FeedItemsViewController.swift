@@ -7,8 +7,8 @@
 
 import UIKit
 
-typealias DataSource = UICollectionViewDiffableDataSource<Section, FeedItem>
-typealias DataSourceSnapshot = NSDiffableDataSourceSnapshot<Section, FeedItem>
+typealias DataSource = UICollectionViewDiffableDataSource<Section, FeedItemCellModel>
+typealias DataSourceSnapshot = NSDiffableDataSourceSnapshot<Section, FeedItemCellModel>
 
 enum Section: Int, CaseIterable {
     case feed
@@ -28,7 +28,6 @@ final class FeedItemsViewController: UIViewController {
             collectionViewLayout: UICollectionViewFlowLayout()
         )
         collectionView.delegate = self
-        collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
         collectionView.register(
             FeedItemCollectionViewCell.self,
             forCellWithReuseIdentifier: Const.cellId
@@ -39,6 +38,8 @@ final class FeedItemsViewController: UIViewController {
     private lazy var actionButton: UIButton = {
         let button = UIButton()
         button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .green
+        button.layer.cornerRadius = 10
         button.setTitle("Transfer money", for: .normal)
         button.addTarget(self, action: #selector(didTapTransfer), for: .touchUpInside)
         return button
@@ -53,16 +54,31 @@ final class FeedItemsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        collectionView.contentInset = .init(
+            top: 0, left: 16, bottom: view.safeAreaInsets.bottom + 64, right: 16
+        )
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         setupUI()
-        configureRefresh()
         configureDataSource()
+        presenter.applySnapshotCompletion = { [weak self] in
+            guard let self else { return }
+            self.actionButton.setTitle(
+                "Transfer money \(self.presenter.moneyToSavingsGoalsFormatted)",
+                for: .normal
+            )
+        }
         presenter.fetchFeedItems(animatingDifferences: false)
+        
     }
     
     private func setupUI() {
+        view.backgroundColor = .white
+        title = "Feed"
         view.addSubviews([collectionView, actionButton])
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -80,21 +96,14 @@ final class FeedItemsViewController: UIViewController {
         ])
     }
     
-    private func configureRefresh() {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
-        refreshControl.tintColor = .gray
-        collectionView.refreshControl = refreshControl
-    }
-    
     private func configureDataSource() {
         presenter.dataSource = DataSource(
             collectionView: collectionView,
-            cellProvider: { (collectionView, indexPath, feedItem) -> FeedItemCollectionViewCell? in
+            cellProvider: { (collectionView, indexPath, model) -> FeedItemCollectionViewCell? in
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: Const.cellId, for: indexPath
                 ) as? FeedItemCollectionViewCell
-                cell?.configure(feedItem)
+                cell?.configure(model)
                 return cell
             }
         )

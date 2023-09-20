@@ -8,7 +8,7 @@
 import Foundation
 
 enum SavingsGoalsEndpoint {
-    case addMoney(accountId: String, savingsGoalsId: String, count: Int)
+    case addMoney(accountId: String, savingsGoalsId: String, count: Int64)
 }
 
 extension SavingsGoalsEndpoint: PutEndpoint {
